@@ -4,9 +4,9 @@
 const generateHTML = require("./src/generatehtml");
 
 // T E A M  M E M B E R  P R O F I L E S
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 
 // M O D U L E S
 const fs = require("fs");
