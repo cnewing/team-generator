@@ -9,7 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnewing/team-generator.git"
+  },
+  "author": "Christa Newing",
   "license": "ISC",
   "dependencies": {
     "D": "^1.0.0",
