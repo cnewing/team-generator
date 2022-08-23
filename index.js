@@ -1,4 +1,7 @@
-// R E Q U I R E  V A R I A B L E S  &  T O O L S
+
+// M O D U L E S
+const fs = require("fs");
+const inquirer = require("inquirer");
 
 // L I N K  T O  H T M L  P A G E
 const generateHTML = require("./src/generatehtml");
@@ -7,10 +10,6 @@ const generateHTML = require("./src/generatehtml");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-
-// M O D U L E S
-const fs = require("fs");
-const inquirer = require("inquirer");
 
 const teamArray = [];
 
