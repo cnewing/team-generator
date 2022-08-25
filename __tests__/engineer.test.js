@@ -1,30 +1,23 @@
-// U S E  E N G I N E E R  C O N S T R U C T O R
 const Engineer = require("../lib/engineer");
 
-// E N G I N E E R  O B J E C T
-test("creates an Engineer object", () => {
-  const engineer = new Engineer(
-    "Christa",
-    17,
-    "cnewing@gmail.com",
-    "cnewing17"
-  );
+// // E N G I N E E R  O B J E C T  T E S T
+test("Create engineer object", () => {
+  const engineer = new Engineer("Christa", 17, "cnewing@gmail.com", "cnewing");
 
-  expect(engineer.github).toEqual(expect.any(String));
+  expect(typeof engineer).toBe("object");
+});
+
+// G E T  R O L E  T E S T
+test("Get role of employee", () => {
+  const engineer = new Engineer("Christa", 17, "cnewing@gmail", "cnewing");
+
+  expect(engineer.getRole()).toBe("Engineer");
 });
 
 // G E T  G I T H U B
-test("gets engineer github value", () => {
-  const engineer = new Engineer("Christa", 90, "cnewing@gmail", "cnewing");
+test("Get engineer's github", () => {
+  const testParam = "cnewing";
+  const engineer = new Engineer("Christa", 17, "cnewing@gmail", testParam);
 
-  expect(engineer.getGithub()).toEqual(
-    expect.stringContaining(engineer.github.toString())
-  );
-});
-
-// G E T  R O L E
-test("gets role of employee", () => {
-  const engineer = new Engineer("Christa", 90, "cnewing@gmail", "cnewing");
-
-  expect(engineer.getRole()).toEqual("Engineer");
+  expect(engineer.getGithub()).toBe(testParam);
 });

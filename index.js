@@ -1,12 +1,7 @@
-
 // M O D U L E S
 const fs = require("fs");
 const inquirer = require("inquirer");
-
-// L I N K  T O  H T M L  P A G E
 const generateHTML = require("./src/generatehtml");
-
-// T E A M  M E M B E R  P R O F I L E S
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -15,7 +10,7 @@ const teamArray = [];
 
 // M A N A G E R  P R O M P T S
 const addManager = () => {
-  return inquirer
+  inquirer
     .prompt([
       {
         type: "input",

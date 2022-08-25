@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+const Employee = require("../lib/employee");
 
 // C R E A T E  N E W  E M P L O Y E E  O B J E C T
 test("Create new employee", () => {
@@ -29,5 +29,6 @@ test("Get employee email", () => {
 
 // G E T  E M P L O Y E E  R O L E
 test("Get employee role", () => {});
-const returnEmp = "Employee";
-expect(employeeNew.getRole()).toBe(returnEmp);
+const testValue = "Employee";
+const employeeNew = new Employee("Alicia", 659, "alicia.degrassi@gmail.com");
+expect(employeeNew.getRole()).toBe(testValue);
