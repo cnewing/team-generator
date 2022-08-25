@@ -1,8 +1,10 @@
-// G E N E R A T E  H T M L  C A R D S
+const Manager = require("../lib/manager");
 
-// M A N A G E R
-const generateManager = function (manager) {
-  return `
+// G E N E R A T E  H T M L  C A R D S
+const createTeam = (team) => {
+  // M A N A G E R
+  const generateManager = function (manager) {
+    return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -17,11 +19,11 @@ const generateManager = function (manager) {
         </div>
     </div>
     `;
-};
+  };
 
-// E N G I N E E R
-const generateEngineer = function (engineer) {
-  return `
+  // E N G I N E E R
+  const generateEngineer = function (engineer) {
+    return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -36,11 +38,11 @@ const generateEngineer = function (engineer) {
         </div>
     </div>
     `;
-};
+  };
 
-// I N T E R N
-const generateIntern = function (intern) {
-  return `
+  // I N T E R N
+  const generateIntern = function (intern) {
+    return `
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
@@ -55,46 +57,33 @@ const generateIntern = function (intern) {
     </div>
 </div>
     `;
+  };
+
+  const html = [];
+
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Manager")
+      .map((manager) => generateManager(manager))
+  );
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Engineer")
+      .map((engineer) => generateEngineer(engineer))
+      .join("")
+  );
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Intern")
+      .map((intern) => generateManager(intern))
+      .join("")
+  );
+
+  return html.join("");
 };
 
-generateHTML = (data) => {
-  // C A R D  A R R A Y
-  pageArray = [];
-
-  for (let i = 0; i < data.length; i++) {
-    const employee = data[i];
-    const role = employee.getRole();
-
-    // M A N A G E R  F U N C T I O N
-    if (role === "Manager") {
-      const managerCard = generateManager(employee);
-
-      pageArray.push(managerCard);
-    }
-
-    // E N G I N E E R  F U N C T I O N
-    if (role === "Engineer") {
-      const engineerCard = generateEngineer(employee);
-
-      pageArray.push(engineerCard);
-    }
-
-    // I N T E R N  F U N C T I O N
-    if (role === "Intern") {
-      const internCard = generateIntern(employee);
-
-      pageArray.push(internCard);
-    }
-  }
-
-  const employeeCards = pageArray.join("");
-
-  const generateTeam = generateTeamPage(employeeCards);
-  return generateTeam;
-};
-
-// H T M L  P A G E  W I T H  E M P L O Y E E  D A T A
-const generateTeamPage = function (employeeCards) {
+module.exports = (team) => {
+  // H T M L  P A G E  W I T H  E M P L O Y E E  D A T A
   return `
   <!DOCTYPE html>
   <html lang="en">
