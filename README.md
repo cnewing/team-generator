@@ -11,6 +11,7 @@ Generate a team profile based on user input using the Inquirer module from Node.
 
 ## After
 
+<img width="1440" alt="Screen Shot 2022-08-22 at 10 46 48 PM" src="https://user-images.githubusercontent.com/89669465/186058237-eb892863-c0d0-4fcd-90a8-32a112a41537.png">
 
 
 ## Tools
