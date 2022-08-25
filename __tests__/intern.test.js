@@ -1,25 +1,15 @@
-// // U S E  I N T E R N  C O N S T R U C T O R
-// const Intern = require("../lib/intern");
+const Intern = require("../lib/intern");
 
-// // creating intern object
-// test("creates an Intern object", () => {
-//   const intern = new Intern("Christa", 17, "cnewing@gmail", "LTU");
+test("Get intern's school using getSchool()", () => {
+  const testParam = "NYU";
+  const intern = new Intern("Christa", 17, "cnewing@gmail", testParam);
 
-//   expect(intern.school).toEqual(expect.any(String));
-// });
+  expect(intern.getSchool()).toBe(testParam);
+});
 
-// // gets school from getSchool()
-// test("gets employee school", () => {
-//   const intern = new Intern("Christa", 17, "cnewing@gmail", "LTU");
+test("Use getRole() to get employee type", () => {
+  const testParam = "Intern";
+  const intern = new Intern("Christa", 17, "cnewing@gmail.com", "NYU");
 
-//   expect(intern.getSchool()).toEqual(
-//     expect.stringContaining(intern.school.toString())
-//   );
-// });
-
-// // gets role from getRole()
-// test("gets role of employee", () => {
-//   const intern = new Intern("Christa", 17, "cnewing@gmail.com", "LTU");
-
-//   expect(intern.getRole()).toEqual("Intern");
-// });
+  expect(intern.getRole()).toBe(testParam);
+});

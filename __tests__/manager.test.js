@@ -1,16 +1,16 @@
-// // U S E  M A N A G E R  C O N S T R U C T O R
-// const Manager = require("../lib/manager");
+const Manager = require("../lib/manager");
+const Employee = require("../lib/employee");
 
-// // M A N A G E R  O B J E C T
-// test("creates an Manager object", () => {
-//   const manager = new Manager("Christa", 17, "cnewing@gmail", 8);
+test("Get office number ", () => {
+  const testParam = 2487650989;
+  const Employee = new Manager("Christa", 17, "cnewing@gmail.com", testParam);
 
-//   expect(manager.officeNumber).toEqual(expect.any(Number));
-// });
+  expect(Employee.getOfficeNumber()).toBe(testParam);
+});
 
-// // G E T  R O L E
-// test("gets role of employee", () => {
-//   const manager = new Manager("Christa", 17, "cnewing@gmail.com");
+test("Get role of employee to return Manager", () => {
+  const testParam = "Manager";
+  const Employee = new Manager("Christa", 17, "cnewing@gmail.com", 2487650989);
 
-//   expect(manager.getRole()).toEqual("Manager");
-// });
+  expect(Employee.getRole()).toBe(testParam);
+});
