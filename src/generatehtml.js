@@ -130,6 +130,3 @@ const generateTeamPage = function (employeeCards) {
   </html>
 `;
 };
-
-// export to index
-module.exports = generateHTML;
