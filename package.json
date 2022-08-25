@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/cnewing/team-generator.git"
   },
-  "author": "Christa Newing",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "D": "^1.0.0",
