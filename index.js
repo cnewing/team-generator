@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
-const generateHTML = require("./src/generatehtml");
+const generateHTML = require("./src/generatehtml").default;
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -167,3 +167,5 @@ function createHtml() {
   const teamArray = teamArray.join("");
   fs.writeFile("./dist/index.html");
 }
+
+startApp();
